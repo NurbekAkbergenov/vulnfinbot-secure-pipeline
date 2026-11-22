@@ -1,0 +1,12 @@
+rules:
+  - id: python-eval-usage
+    message: >-
+      Use of eval() allows arbitrary code execution from untrusted input and
+      should be avoided.
+    metadata:
+      cwe: "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code"
+      owasp: "A03:2021 - Injection"
+    languages: [python]
+    severity: ERROR
+    patterns:
+      - pattern: eval(...)
